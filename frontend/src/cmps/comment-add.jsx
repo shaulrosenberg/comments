@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import md5 from "md5"
 
 export function AddComment({ addComment }) {
     const [email, setEmail] = useState(""); // State to store the user's email
@@ -15,7 +14,7 @@ export function AddComment({ addComment }) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        const gravatarURL = `https://www.gravatar.com/avatar/${md5(email.toLowerCase().trim())}?s=80`
+        const gravatarURL = `https://www.gravatar.com/avatar/${email.toLowerCase().trim()}?s=80`
         addComment({ email, message, imgUrl: gravatarURL })
         // clear inputs
         setEmail("")

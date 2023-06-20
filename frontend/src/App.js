@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+
 // views
 import { CommentIndex } from './views/comment-index'
 

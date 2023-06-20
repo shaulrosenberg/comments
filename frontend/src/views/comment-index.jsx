@@ -12,7 +12,7 @@ export function CommentIndex() {
     const [filterBy, setFilterBy] = useState({ txt: '' })
 
     useEffect(() => {
-        loadComments(filterBy)
+        loadComments()
         // add listeners
         return () => {
 
