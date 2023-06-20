@@ -32,7 +32,7 @@ export function CommentIndex() {
     return (
         <section>
             <AddComment addComment={addComment} />
-            <CommentFilter onFilterBy={handleFilter} />
+            <CommentFilter onFilterBy={handleFilter} filterBy={filterBy}/>
             {filteredComments.length ? <CommentList comments={filteredComments} /> : 'No matching comments'}
         </section>
     )
