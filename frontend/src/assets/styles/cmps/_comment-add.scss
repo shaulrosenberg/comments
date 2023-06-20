@@ -1,0 +1,36 @@
+.comment-add {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        input, textarea {
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: box-shadow 0.3s ease-in-out;
+
+            &:focus {
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            }
+        }
+
+        button {
+            padding: 0.5em 1em;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
