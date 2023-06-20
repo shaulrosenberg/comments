@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-// services
-import { commentService } from '../services/comment.service'
+
 // actions
 import { addComment, removeComment, loadComments } from '../store/comment.actions'
 import { AddComment } from '../cmps/comment-add'
@@ -31,6 +30,7 @@ export function CommentIndex() {
         filterRegEx.test(comment.email) || filterRegEx.test(comment.message)
     )
 
+    if(!filteredComments && !filteredComments.length) return <h1>Loading...</h1>
     return (
         <section>
             <AddComment addComment={addComment} />
