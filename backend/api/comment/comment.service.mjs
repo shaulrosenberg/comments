@@ -9,7 +9,7 @@ const PAGE_SIZE = 3
 async function query(filterBy = { txt: '' }) {
     try {
         const criteria = {
-            // title: { $regex: filterBy.txt, $options: 'i' }
+            message: { $regex: filterBy.txt, $options: 'i' }
         }
         const collection = await dbService.getCollection('comment')
         var commentCursor = await collection.find(criteria)
@@ -62,7 +62,7 @@ async function add(comment) {
 
 async function update(comment) {
     try {
-        const commentToSave = {...comment}
+        const commentToSave = { ...comment }
         // to avoid MongoError: modifying immutable field '_id'
         delete commentToSave._id
         // commentToSave

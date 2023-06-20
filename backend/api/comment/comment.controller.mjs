@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { commentService } from './comment.service.mjs'
 import { logger } from '../../services/logger.service.mjs'
 
@@ -6,9 +5,7 @@ import { logger } from '../../services/logger.service.mjs'
 export async function getComments(req, res) {
 	try {
 		logger.debug('Getting Comments:', req.query)
-		const filterBy = {
-			txt: ''
-		}
+		const { filterBy } = req.query
 		const comments = await commentService.query(filterBy)
 		res.json(comments)
 	} catch (err) {

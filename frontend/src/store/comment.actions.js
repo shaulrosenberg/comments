@@ -32,9 +32,9 @@ export function getActionUpdateComment(comment) {
   }
 }
 
-export async function loadComments() {
+export async function loadComments(filterBy) {
   try {
-    const comments = await commentService.query()
+    const comments = await commentService.query(filterBy)
     console.log('Comments from DB:', comments)
     store.dispatch({
       type: SET_COMMENTS,
