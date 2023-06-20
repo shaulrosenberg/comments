@@ -17,7 +17,7 @@ export function CommentIndex() {
         return () => {
 
         }
-    }, [filterBy])
+    }, [])
 
     const handleFilter = (txt) => {
         setFilterBy({ txt })
